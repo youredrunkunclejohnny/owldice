@@ -1,4 +1,6 @@
-# Owlbear Rodeo Dice
+# Owlbear Rodeo Dice - D6
+
+## A modification limiting die selection to only D6
 
 Beautiful 3D dice extension for d20 based systems
 
