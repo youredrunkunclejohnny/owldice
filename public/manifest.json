@@ -2,8 +2,7 @@
   "name": "WrathDice",
   "version": "2.0.0",
   "manifest_version": 1,
-  "author": "Owlbear Rodeo",
-  "homepage_url": "https://extensions.owlbear.rodeo/dice",
+  "author": "you'redrunkuncleJohnny",
   "icon": "/logo.png",
   "description": "Dice mod - Limit to D6",
   "action": {
