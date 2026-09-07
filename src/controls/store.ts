@@ -31,7 +31,7 @@ interface DiceControlsState {
   toggleFairnessTester: () => void;
 }
 
-const initialSet = diceSets[0];
+const initialSet = diceSets.find((set) => set.id === "all") ?? diceSets[0];
 const initialDiceCounts = getDiceCountsFromSet(initialSet);
 const initialDiceById = getDiceByIdFromSet(initialSet);
 
