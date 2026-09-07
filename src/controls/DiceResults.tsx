@@ -7,6 +7,7 @@ import Grow from "@mui/material/Grow";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 
+import { getCombinedDiceValue } from "../helpers/getCombinedDiceValue";
 import { getWrathDiceValue } from "../helpers/getWrathDiceValue";
 import { DiceRoll } from "../types/DiceRoll";
 import { Die, isDie } from "../types/Die";
