@@ -7,7 +7,7 @@ import Grow from "@mui/material/Grow";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 
-import { getCombinedDiceValue } from "../helpers/getCombinedDiceValue";
+import { getWrathDiceValue } from "../helpers/getWrathDiceValue";
 import { DiceRoll } from "../types/DiceRoll";
 import { Die, isDie } from "../types/Die";
 import { Dice, isDice } from "../types/Dice";
@@ -24,8 +24,8 @@ export function DiceResults({
   expanded: boolean;
   onExpand: (expand: boolean) => void;
 }) {
-  const finalValue = useMemo(() => {
-    return getCombinedDiceValue(diceRoll, rollValues);
+  const icons = useMemo(() => {
+    return getWrathDiceValue(diceRoll, rollValues);
   }, [diceRoll, rollValues]);
 
   return (
@@ -39,9 +39,17 @@ export function DiceResults({
           onClick={() => onExpand(!expanded)}
           color="inherit"
         >
-          <Typography variant="h4" color="white">
-            {finalValue}
-          </Typography>
+          <Stack direction="row" gap={1.5}>
+            <Typography variant="h6" color="white">
+              Fail: {icons.fail}
+            </Typography>
+            <Typography variant="h6" color="white">
+              Icon: {icons.icon}
+            </Typography>
+            <Typography variant="h6" color="white">
+              Exalt: {icons.exalt}
+            </Typography>
+          </Stack>
         </Button>
       </Tooltip>
       <Grow
