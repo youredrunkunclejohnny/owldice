@@ -42,9 +42,6 @@ export function DiceResults({
         >
           <Stack direction="row" gap={1.5}>
             <Typography variant="h6" color="white">
-              Fail: {icons.fail}
-            </Typography>
-            <Typography variant="h6" color="white">
               Icon: {icons.icon}
             </Typography>
             <Typography variant="h6" color="white">
