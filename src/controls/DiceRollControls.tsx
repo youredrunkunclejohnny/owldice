@@ -23,6 +23,7 @@ import { getDiceToRoll, useDiceControlsStore } from "./store";
 import { DiceType } from "../types/DiceType";
 import { useDiceHistoryStore } from "./history";
 import { Die } from "../types/Die";
+import { getDieFromDice } from "../helpers/getDieFromDice";
 
 const jiggle = keyframes`
 0% { transform: translate(0, 0) rotate(0deg); }
@@ -321,6 +322,19 @@ function FinishedRollControls() {
     return values;
   }, [rollValues]);
 
+  const nonIcons = useMemo(() => {
+    if (!roll) {
+      return [];
+    }
+    return getDieFromDice(roll)
+      .filter((die) => {
+        const value = finishedRollValues[die.id];
+        return die.type === "D6" && value !== undefined && value <= 3;
+      })
+      .map((die) => die.id);
+  }, [roll, finishedRollValues]);
+
+
   const [resultsExpanded, setResultsExpanded] = useState(false);
 
   return (
@@ -349,6 +363,15 @@ function FinishedRollControls() {
               sx={{ pointerEvents: "all", color: "white" }}
             >
               <RerollDiceIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Wrath Reroll" sx={{ pointerEvents: "all" }}>
+            <IconButton
+              onClick={() => reroll(nonIcons)}
+              disabled={nonIcons.length === 0}
+              sx={{ pointerEvents: "all", color: "white" }}
+            >
+              <WrathRerollIcon />
             </IconButton>
           </Tooltip>
           <Tooltip title="Clear" sx={{ pointerEvents: "all" }}>
