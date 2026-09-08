@@ -353,38 +353,42 @@ function FinishedRollControls() {
         }}
         component="div"
       >
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          width="100%"
-          alignItems="start"
+<Stack
+  direction="row"
+  justifyContent="space-between"
+  width="100%"
+  alignItems="start"
+>
+  <Stack direction="row" spacing={1}>
+    <Tooltip title="Reroll" sx={{ pointerEvents: "all" }}>
+      <IconButton
+        onClick={() => reroll()}
+        sx={{ pointerEvents: "all", color: "white" }}
+      >
+        <RerollDiceIcon />
+      </IconButton>
+    </Tooltip>
+    <Tooltip title="Wrath Reroll" sx={{ pointerEvents: "all" }}>
+      <span>
+        <IconButton
+          onClick={() => reroll(nonIcons)}
+          disabled={nonIcons.length === 0}
+          sx={{ pointerEvents: "all", color: "white" }}
         >
-          <Tooltip title="Reroll" sx={{ pointerEvents: "all" }}>
-            <IconButton
-              onClick={() => reroll()}
-              sx={{ pointerEvents: "all", color: "white" }}
-            >
-              <RerollDiceIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Wrath Reroll" sx={{ pointerEvents: "all" }}>
-            <IconButton
-              onClick={() => reroll(nonIcons)}
-              disabled={nonIcons.length === 0}
-              sx={{ pointerEvents: "all", color: "white" }}
-            >
-              <WrathRerollIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Clear" sx={{ pointerEvents: "all" }}>
-            <IconButton
-              onClick={() => clearRoll()}
-              sx={{ pointerEvents: "all", color: "white" }}
-            >
-              <CloseIcon />
-            </IconButton>
-          </Tooltip>
-        </Stack>
+          <WrathRerollIcon />
+        </IconButton>
+      </span>
+    </Tooltip>
+  </Stack>
+  <Tooltip title="Clear" sx={{ pointerEvents: "all" }}>
+    <IconButton
+      onClick={() => clearRoll()}
+      sx={{ pointerEvents: "all", color: "white" }}
+    >
+      <CloseIcon />
+    </IconButton>
+  </Tooltip>
+</Stack>
       </Box>
       <Stack
         sx={{
