@@ -1,6 +1,11 @@
-# Owlbear Rodeo Dice - D6
+# Owlbear Rodeo Dice - Wrathdice
 
-## A modification limiting die selection to only D6
+## A modification to Owlbear Rodeo Dice to better support play for Warhammer Wrath and Glory
+
+-Limits die selection to all varieties of D6
+-Lists number of Icons, Exalts, and Total Successes
+
+--------------------------
 
 Beautiful 3D dice extension for d20 based systems
 
