@@ -15,6 +15,7 @@ import HiddenIcon from "@mui/icons-material/VisibilityOffRounded";
 import RollIcon from "@mui/icons-material/ArrowForwardRounded";
 
 import { RerollDiceIcon } from "../icons/RerollDiceIcon";
+import { WrathRerollIcon } from "../icons/WrathRerollIcon";
 
 import { GradientOverlay } from "./GradientOverlay";
 import { useDiceRollStore } from "../dice/store";
@@ -24,6 +25,7 @@ import { DiceType } from "../types/DiceType";
 import { useDiceHistoryStore } from "./history";
 import { Die } from "../types/Die";
 import { getDieFromDice } from "../helpers/getDieFromDice";
+
 
 const jiggle = keyframes`
 0% { transform: translate(0, 0) rotate(0deg); }
