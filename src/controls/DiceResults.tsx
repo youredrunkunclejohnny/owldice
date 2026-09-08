@@ -48,7 +48,7 @@ export function DiceResults({
               Exalt: {icons.exalt}
             </Typography>
             <Typography variant="h6" color="white">
-              Total Icons: {icons.icon + icons.exalt * 2}
+              Total: {icons.icon + icons.exalt * 2}
             </Typography>
           </Stack>
         </Button>
